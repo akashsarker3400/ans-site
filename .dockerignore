@@ -1,0 +1,6 @@
+node_modules
+.next
+screens
+.git
+*.md
+npm-debug.log*
