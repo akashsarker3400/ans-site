@@ -30,6 +30,11 @@ html {
   font-family: "Noto Sans Bengali", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -115,6 +120,7 @@ h1, h2, h3 {
 }
 .btn-primary:hover {
   background: #e4e4e7;
+  transform: translateY(-1px);
 }
 .btn-primary:active {
   transform: scale(0.98);
@@ -136,6 +142,10 @@ h1, h2, h3 {
 .btn-secondary:hover {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+.btn-secondary:active {
+  transform: scale(0.98);
 }
 
 .section-pad {
@@ -159,6 +169,7 @@ h1, h2, h3 {
 /* Understated radial glow, used once per page at most */
 .hero-glow {
   position: relative;
+  overflow: hidden;
 }
 .hero-glow::before {
   content: "";
@@ -166,7 +177,7 @@ h1, h2, h3 {
   top: -10%;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
+  width: min(900px, 100vw);
   height: 500px;
   background: radial-gradient(ellipse at center, var(--accent-soft), transparent 70%);
   pointer-events: none;

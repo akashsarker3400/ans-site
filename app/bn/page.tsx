@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import StatsStrip from "@/components/StatsStrip";
 import WhyUs from "@/components/WhyUs";
 import HeroOrbs from "@/components/HeroOrbs";
+import ToolsTeaser from "@/components/ToolsTeaser";
 import { ArrowRight } from "lucide-react";
 
 export default function BnHome() {
@@ -15,17 +16,23 @@ export default function BnHome() {
       <section className="hero-glow relative pt-20 pb-24 sm:pt-28 sm:pb-32">
         <HeroOrbs />
         <div className="container-x relative z-10">
-          <Reveal>
+          <Reveal y={16}>
             <span className="eyebrow mb-7">বাংলাদেশ ভিত্তিক মিউজিক ও মিডিয়া টেকনোলজি</span>
+          </Reveal>
+          <Reveal y={20} delay={0.08}>
             <h1 className="text-[2.4rem] sm:text-5xl lg:text-6xl font-bold leading-[1.1] mb-7 max-w-3xl">
               {SITE.bn.tagline}
             </h1>
+          </Reveal>
+          <Reveal y={20} delay={0.16}>
             <p className="text-lg text-muted leading-relaxed mb-10 max-w-2xl">
               আমরা মিউজিক ডিস্ট্রিবিউশন ও রাইটস ম্যানেজমেন্টের প্রযুক্তি তৈরি করি — যার মধ্যে আছে{" "}
               <span className="text-white font-medium">ANS Music</span>, আমাদের হোয়াইট-লেবেল
               ডিস্ট্রিবিউশন প্ল্যাটফর্ম, যা দিয়ে লেবেলরা ১৫০+ স্ট্রিমিং প্ল্যাটফর্মে নিজস্ব ব্র্যান্ডে
               ব্যবসা চালায়।
             </p>
+          </Reveal>
+          <Reveal y={16} delay={0.24}>
             <div className="flex flex-wrap gap-3">
               <Link href="/bn/services" className="btn-primary">
                 সেবাসমূহ দেখুন <ArrowRight className="w-4 h-4" />
@@ -67,6 +74,8 @@ export default function BnHome() {
           </div>
         </div>
       </section>
+
+      <ToolsTeaser locale="bn" />
 
       <WhyUs locale="bn" />
 

@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import type { Locale } from "@/lib/content";
 
 // Pages that exist with an identical path on both sites.
-const SHARED_PATHS = new Set(["", "/", "/services", "/about", "/contact", "/faq"]);
+const SHARED_PATHS = new Set(["", "/", "/services", "/about", "/contact", "/faq", "/tools"]);
 
 export default function LangSwitch({ locale }: { locale: Locale }) {
   const pathname = usePathname(); // e.g. /bn/services/vevo-channel

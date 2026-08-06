@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import StatsStrip from "@/components/StatsStrip";
 import WhyUs from "@/components/WhyUs";
 import HeroOrbs from "@/components/HeroOrbs";
+import ToolsTeaser from "@/components/ToolsTeaser";
 import { ArrowRight, LayoutGrid, ShieldCheck, Headphones } from "lucide-react";
 
 export default function EnHome() {
@@ -15,17 +16,23 @@ export default function EnHome() {
       <section className="hero-glow relative pt-20 pb-24 sm:pt-28 sm:pb-32">
         <HeroOrbs />
         <div className="container-x relative z-10">
-          <Reveal>
+          <Reveal y={16}>
             <span className="eyebrow mb-7">Bangladesh-based · Music &amp; media technology</span>
+          </Reveal>
+          <Reveal y={20} delay={0.08}>
             <h1 className="text-[2.6rem] sm:text-6xl lg:text-[4.25rem] font-bold leading-[1.05] mb-7 max-w-4xl">
               {SITE.en.tagline}
             </h1>
+          </Reveal>
+          <Reveal y={20} delay={0.16}>
             <p className="text-lg sm:text-xl text-muted leading-relaxed mb-10 max-w-2xl">
               ANS Digital builds the technology behind modern music distribution and rights
               management — including <span className="text-white font-medium">ANS Music</span>,
               our white-label distribution platform used by labels to run their own branded
               business on 150+ streaming platforms.
             </p>
+          </Reveal>
+          <Reveal y={16} delay={0.24}>
             <div className="flex flex-wrap gap-3">
               <Link href="/en/services" className="btn-primary">
                 Explore services <ArrowRight className="w-4 h-4" />
@@ -67,6 +74,8 @@ export default function EnHome() {
           </div>
         </div>
       </section>
+
+      <ToolsTeaser locale="en" />
 
       <WhyUs locale="en" />
 

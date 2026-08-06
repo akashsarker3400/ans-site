@@ -357,6 +357,7 @@ export const NAV = {
   bn: [
     { href: "/", label: "হোম" },
     { href: "/services", label: "সেবাসমূহ" },
+    { href: "/tools", label: "টুলস" },
     { href: "/about", label: "আমাদের সম্পর্কে" },
     { href: "/faq", label: "প্রশ্নোত্তর" },
     { href: "/contact", label: "যোগাযোগ" },
@@ -364,8 +365,65 @@ export const NAV = {
   en: [
     { href: "/", label: "Home" },
     { href: "/services", label: "Services" },
+    { href: "/tools", label: "Tools" },
     { href: "/about", label: "About" },
     { href: "/faq", label: "FAQ" },
     { href: "/contact", label: "Contact" },
   ],
 };
+
+export type Tool = {
+  slug: string;
+  icon: string;
+  href: string;
+  external?: boolean;
+  status: "live" | "soon";
+  bn: { title: string; desc: string };
+  en: { title: string; desc: string };
+};
+
+export const TOOLS: Tool[] = [
+  {
+    slug: "url-shortener",
+    icon: "Link2",
+    href: "/short",
+    external: true,
+    status: "live",
+    bn: {
+      title: "URL Shortener",
+      desc: "যেকোনো লম্বা লিংককে ছোট, শেয়ারযোগ্য লিংকে রূপান্তর করুন — বিনামূল্যে, সবার জন্য।",
+    },
+    en: {
+      title: "URL Shortener",
+      desc: "Turn any long link into a short, shareable one — free, for everyone.",
+    },
+  },
+  {
+    slug: "upc-isrc-lookup",
+    icon: "Search",
+    href: "#",
+    status: "soon",
+    bn: {
+      title: "UPC/ISRC → Spotify Data",
+      desc: "UPC বা ISRC কোড দিয়ে Spotify-তে রিলিজের স্ট্রিমিং ডেটা খুঁজে বের করুন।",
+    },
+    en: {
+      title: "UPC/ISRC → Spotify Data",
+      desc: "Look up a release's Spotify streaming data using its UPC or ISRC code.",
+    },
+  },
+  {
+    slug: "spotify-metadata",
+    icon: "FileSearch",
+    href: "#",
+    status: "soon",
+    bn: {
+      title: "Spotify Link → Metadata",
+      desc: "যেকোনো Spotify লিংক থেকে ট্র্যাক/অ্যালবামের মেটাডেটা এক ক্লিকে বের করুন।",
+    },
+    en: {
+      title: "Spotify Link → Metadata",
+      desc: "Extract track or album metadata from any Spotify link in one click.",
+    },
+  },
+];
