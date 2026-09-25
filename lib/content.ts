@@ -289,8 +289,8 @@ export const FAQ_EN = [
     a: "Timelines depend on VEVO's review process, but we handle the full application end-to-end and keep you updated at every stage so there are no surprises.",
   },
   {
-    q: "Do you only work with Bangladeshi labels, or international clients too?",
-    a: "We're based in Bangladesh and proud of it, but our services are built to international standards and we work with labels and artists globally.",
+    q: "Do you work with international labels and artists?",
+    a: "We work with labels, distributors and artists globally. Our services are built to international standards and every platform we deliver to is worldwide.",
   },
   {
     q: "Which DSPs (streaming platforms) do you support?",
@@ -328,8 +328,8 @@ export const FAQ_BN = [
     a: "সময়সীমা নির্ভর করে VEVO-এর রিভিউ প্রক্রিয়ার উপর, তবে আমরা পুরো আবেদন প্রক্রিয়াটি শুরু থেকে শেষ পর্যন্ত পরিচালনা করি এবং প্রতিটি ধাপে আপনাকে আপডেট রাখি।",
   },
   {
-    q: "আপনারা কি শুধু বাংলাদেশি লেবেলদের সাথে কাজ করেন, নাকি আন্তর্জাতিক ক্লায়েন্টদের সাথেও?",
-    a: "আমরা বাংলাদেশ ভিত্তিক এবং এতে গর্বিত, তবে আমাদের সেবাগুলো আন্তর্জাতিক মান অনুযায়ী তৈরি এবং আমরা বিশ্বব্যাপী লেবেল ও শিল্পীদের সাথে কাজ করি।",
+    q: "আপনারা কি আন্তর্জাতিক লেবেল ও শিল্পীদের সাথে কাজ করেন?",
+    a: "আমরা বিশ্বব্যাপী লেবেল, ডিস্ট্রিবিউটর ও শিল্পীদের সাথে কাজ করি। আমাদের সেবাগুলো আন্তর্জাতিক মান অনুযায়ী তৈরি।",
   },
   {
     q: "আপনারা কোন কোন DSP (স্ট্রিমিং প্ল্যাটফর্ম) সাপোর্ট করেন?",
