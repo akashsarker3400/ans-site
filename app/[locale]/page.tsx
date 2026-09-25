@@ -2,7 +2,7 @@ import type { Locale } from "@/lib/content";
 import { CONTACT } from "@/lib/content";
 import { COPY } from "@/lib/copy";
 import { PartnerMarquee } from "@/components/site/shared";
-import { Featured, FinalCta, Hero, ServicesSection, Stats, Structure, ToolsTeaser, WhyUs } from "@/components/site/home";
+import { ArtistPricingCta, Featured, FinalCta, Hero, ServicesSection, Stats, Structure, ToolsTeaser, WhyUs } from "@/components/site/home";
 
 export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
   const locale = (await params).locale as Locale;
@@ -16,6 +16,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <ToolsTeaser locale={locale} />
       <WhyUs locale={locale} />
       <Featured locale={locale} />
+      <ArtistPricingCta locale={locale} />
       <Structure locale={locale} />
       <FinalCta locale={locale} email={CONTACT.email} />
     </>
