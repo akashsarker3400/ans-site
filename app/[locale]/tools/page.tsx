@@ -27,10 +27,12 @@ export default async function Tools({ params }: { params: Promise<{ locale: stri
               </div>
               <h2 className="text-h3 mt-7">{tool[locale].title}</h2>
               <p className="mt-2 flex-1 text-[15px] text-muted-foreground">{tool[locale].desc}</p>
-              <span className={live ? "btn-primary btn-sm mt-6 self-start" : "btn-ghost btn-sm mt-6 self-start opacity-60"}>
-                {live ? t.tools.use : t.tools.soon}
-                {live && <ArrowUpRight className="size-4" />}
-              </span>
+              {live && (
+                <span className="btn-primary btn-sm mt-6 self-start">
+                  {t.tools.use}
+                  <ArrowUpRight className="size-4" />
+                </span>
+              )}
             </>
           );
           return (

@@ -67,11 +67,11 @@ export function TextReveal({
       {units.map((unit, i) => (
         <motion.span
           key={i}
-          initial={{ opacity: 0.1, filter: "blur(8px)" }}
+          initial={{ opacity: 0, y: 8 }}
           animate={
             isInView
-              ? { opacity: 1, filter: "blur(0px)" }
-              : { opacity: 0.1, filter: "blur(8px)" }
+              ? { opacity: 1, y: 0 }
+              : { opacity: 0, y: 8 }
           }
           transition={{
             duration,
@@ -79,7 +79,7 @@ export function TextReveal({
             ease: "easeOut",
           }}
           style={{ display: "inline-block" }}
-          className="will-change-[opacity,filter]"
+          className="will-change-[opacity,transform]"
         >
           {unit}
         </motion.span>

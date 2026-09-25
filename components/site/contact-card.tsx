@@ -22,7 +22,7 @@ export function ContactCard({ locale, email }: { locale: Locale; email: string }
   };
 
   return (
-    <div className="mx-auto max-w-[720px]">
+    <div className="max-w-[720px]">
       <Reveal className="card p-7 md:p-10">
         <p className="label">{t.contact.writeTo}</p>
         <a href={`mailto:${email}`} className="mt-3 block break-all font-heading text-[clamp(24px,4vw,44px)] leading-tight font-extrabold tracking-[-0.02em] text-signal transition-opacity hover:opacity-85">

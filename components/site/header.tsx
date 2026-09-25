@@ -70,7 +70,7 @@ export function Header({ locale }: { locale: Locale }) {
           )}
         >
           <Link href={b} className="flex shrink-0 items-center gap-2 pl-2" aria-label={t.brand}>
-            <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={140} height={40} priority className="h-6 w-auto object-contain" />
+            <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={192} height={100} priority className={cn("w-auto object-contain transition-[height] duration-300", floating || open ? "h-8" : "h-9")} />
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">

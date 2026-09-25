@@ -46,11 +46,10 @@ function AccordionItem({
     <motion.div
       layout
       className={cn(
-        "overflow-hidden rounded-[30px] bg-surface text-foreground shadow-xs",
+        "card overflow-hidden text-foreground",
         isOpen && " ",
       )}
       transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.9 }}
-      animate={{ scale: isOpen ? 1 : 0.985 }}
       initial={false}
       style={{ originX: 0.5, originY: 0 }}
     >

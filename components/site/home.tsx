@@ -8,12 +8,11 @@ import { Check } from "lucide-react";
 import { CountUp } from "@/components/unlumen-ui/count-up";
 import { MagneticButton } from "@/components/unlumen-ui/magnetic-button";
 import { TextReveal } from "@/components/unlumen-ui/text-reveal";
-import { Highlight, HighlightItem } from "@/components/unlumen-ui/primitives/effects/velocity-highlight";
 import { PORTFOLIO } from "@/lib/partners";
 import { SERVICES, STATS, TOOLS, WHY_US, type Locale } from "@/lib/content";
 import { COPY, base } from "@/lib/copy";
 import { cn } from "@/lib/utils";
-import { ArrowRight, ArrowUpRight, EASE, Icon, Reveal, Section, SignalPanel, StatusBadge } from "./shared";
+import { ArrowRight, ArrowUpRight, EASE, Icon, Reveal, Section, StatusBadge } from "./shared";
 
 /* ---------------- Hero ---------------- */
 
@@ -66,8 +65,8 @@ export function Hero({ locale }: { locale: Locale }) {
 
         <motion.div style={reduce ? undefined : { y }} className="lg:col-span-5">
           <Reveal delay={0.15}>
-            <div className="relative overflow-hidden rounded-[28px] border border-line-strong p-2">
-              <SignalPanel className="absolute inset-0" opacity={0.6} />
+            <div className="relative overflow-hidden rounded-[28px] border border-line-strong bg-surface-2 p-2">
+              <span aria-hidden className="absolute inset-x-6 top-0 h-0.5 rounded-full bg-signal" />
               <div className="relative rounded-[22px] border border-line bg-background p-5">
                 <div className="flex items-center justify-between">
                   <span className="label">ANS Music · pipeline</span>
@@ -77,7 +76,7 @@ export function Hero({ locale }: { locale: Locale }) {
                   {PIPE.map(([title, sub], i) => (
                     <motion.li
                       key={title}
-                      initial={reduce ? false : { opacity: 0, x: -10 }}
+                      initial={{ opacity: 0, x: -10 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.45, ease: EASE, delay: 0.5 + i * 0.12 }}
                       className="flex items-center gap-4 rounded-2xl border border-line bg-surface px-4 py-3"
@@ -107,15 +106,14 @@ export function Hero({ locale }: { locale: Locale }) {
 /* ---------------- Stats ---------------- */
 
 export function Stats({ locale }: { locale: Locale }) {
-  const reduce = useReducedMotion();
   return (
-    <section aria-label="Key numbers" className="container-x py-12 md:py-16">
+    <section aria-label="Key numbers" className="container-x py-10 md:py-14">
       <div className="grid grid-cols-2 border-line lg:grid-cols-4 lg:divide-x lg:divide-line">
         {STATS.map((s, i) => (
           <Reveal key={s.en.label} delay={i * 0.06} className={cn("py-6 lg:px-8 lg:py-2", i % 2 === 1 && "border-l border-line pl-6 lg:border-l-0 lg:pl-8", i >= 2 && "border-t border-line pt-8 lg:border-t-0 lg:pt-2", i === 0 && "lg:pl-0")}>
-            <div className="font-heading text-[clamp(44px,5vw,64px)] leading-none font-extrabold tracking-[-0.03em] tabular-nums">
+            <div className="font-heading text-[clamp(34px,9vw,64px)] leading-none font-extrabold tracking-[-0.03em] whitespace-nowrap tabular-nums lg:text-[clamp(44px,5vw,64px)]">
               {s.prefix}
-              {reduce ? s.value : <CountUp to={s.value} duration={1.4} digitEffect="none" />}
+              <CountUp to={s.value} duration={1.4} digitEffect="none" />
               {s.suffix}
             </div>
             <p className="mt-3 text-[14px] leading-snug text-muted-foreground">{s[locale].label}</p>
@@ -132,10 +130,9 @@ export function ServicesGrid({ locale, large = false }: { locale: Locale; large?
   const t = COPY[locale];
   const b = base(locale);
   return (
-    <Highlight mode="parent" hover containerClassName="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 [&>*]:h-full" className="rounded-[24px] border border-signal/60">
+    <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {SERVICES.map((s, i) => (
-        <HighlightItem key={s.slug} value={s.slug} asChild>
-          <Link href={`${b}/services/${s.slug}`} className={cn("card card-hover group relative z-10 flex h-full flex-col", large ? "p-8" : "p-7")}>
+          <Link key={s.slug} href={`${b}/services/${s.slug}`} className={cn("card card-hover group flex h-full flex-col", large ? "p-8" : "p-7")}>
             <div className="flex items-start justify-between">
               <span className="grid size-11 place-items-center rounded-2xl border border-line bg-surface-2 text-foreground">
                 <Icon name={s.icon} className="size-5" />
@@ -159,9 +156,8 @@ export function ServicesGrid({ locale, large = false }: { locale: Locale; large?
               <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
           </Link>
-        </HighlightItem>
       ))}
-    </Highlight>
+    </div>
   );
 }
 
@@ -246,7 +242,7 @@ export function WhyUs({ locale }: { locale: Locale }) {
   const t = COPY[locale];
   return (
     <Section id="why" index="03" label={t.why.kicker} title={t.why.title}>
-      <div className="mt-12 grid gap-4 md:grid-cols-3">
+      <div className="mt-10 grid gap-4 md:grid-cols-3">
         {WHY_US.map((w, i) => (
           <Reveal key={w.icon} delay={i * 0.08} className="card flex h-full flex-col p-7">
             <span className="font-heading text-[56px] leading-none font-extrabold tracking-[-0.03em] text-line-strong">0{i + 1}</span>
@@ -266,7 +262,7 @@ export function Featured({ locale }: { locale: Locale }) {
   const t = COPY[locale];
   const b = base(locale);
   return (
-    <section className="container-x py-8 md:py-12">
+    <section className="container-x py-0 md:py-4">
       <Reveal>
         <div className="grid gap-10 rounded-[32px] border border-line bg-surface p-7 md:p-12 lg:grid-cols-2 lg:items-center">
           <div>
@@ -292,7 +288,7 @@ export function Featured({ locale }: { locale: Locale }) {
           <div className="grid grid-cols-2 gap-3">
             {t.featured.tiles.map(([title, sub], i) => (
               <Reveal key={title} delay={i * 0.06} className="rounded-[20px] border border-line bg-background p-5">
-                <p className="font-heading text-[22px] leading-tight font-bold tracking-[-0.02em]">{title}</p>
+                <p className="font-heading text-[clamp(18px,5vw,22px)] leading-tight font-bold tracking-[-0.02em]">{title}</p>
                 <p className="mt-1 text-[13px] text-faint">{sub}</p>
               </Reveal>
             ))}
@@ -309,10 +305,10 @@ export function Structure({ locale }: { locale: Locale }) {
   const t = COPY[locale];
   return (
     <Section id="structure" index="04" label={t.portfolio.kicker} title={t.portfolio.title} sub={t.portfolio.sub}>
-      <div className="mt-12">
+      <div className="mt-10">
         <Reveal className="mx-auto max-w-sm">
           <div className="card flex items-center gap-4 p-5">
-            <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={140} height={40} className="h-6 w-auto object-contain" />
+            <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={192} height={100} className="h-8 w-auto object-contain" />
             <span className="label ml-auto text-signal">{t.portfolio.parent}</span>
           </div>
         </Reveal>
@@ -323,8 +319,8 @@ export function Structure({ locale }: { locale: Locale }) {
             <Reveal key={p.name} delay={i * 0.08} className="relative md:pt-10">
               <span aria-hidden className="absolute top-0 left-1/2 hidden h-10 w-px bg-line-strong md:block" />
               <div className="card card-hover flex h-full flex-col p-6">
-                <div className="flex h-8 items-center">
-                  <Image src={p.logo} alt={p.name} width={120} height={32} className="h-6 w-auto object-contain" />
+                <div className="flex h-10 items-center">
+                  <Image src={p.logo} alt={p.name} width={160} height={40} className="h-9 w-auto object-contain" />
                 </div>
                 <p className="label mt-5">{t.portfolio.operatedBy}</p>
                 <h3 className="text-h3 mt-2">{p.name}</h3>
@@ -352,8 +348,8 @@ export function FinalCta({ locale, email }: { locale: Locale; email: string }) {
   return (
     <section className="container-x pt-8 pb-20 md:pb-28">
       <Reveal>
-        <div className="relative isolate overflow-hidden rounded-[32px] border border-line bg-surface px-6 py-16 text-center md:py-24">
-          <SignalPanel className="absolute inset-0 -z-10" opacity={0.25} speed={0.12} />
+        <div className="relative overflow-hidden rounded-[32px] border border-line bg-surface px-6 py-16 text-center md:py-24">
+          <span aria-hidden className="absolute inset-x-0 top-0 h-0.5 bg-signal" />
           <h2 className="text-h1 mx-auto max-w-[18ch]">{t.cta.title}</h2>
           <p className="mx-auto mt-5 max-w-[48ch] text-[17px] text-muted-foreground">{t.cta.sub}</p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

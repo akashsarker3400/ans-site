@@ -51,7 +51,7 @@ export default async function About({ params }: { params: Promise<{ locale: stri
           {t.about.steps.map(([title, desc], i) => (
             <Reveal key={title} delay={i * 0.08} className="card flex h-full flex-col p-6">
               <span className="font-heading text-[44px] leading-none font-extrabold tracking-[-0.03em] text-line-strong">0{i + 1}</span>
-              <h3 className="text-h3 mt-5">{title}</h3>
+              <h2 className="text-h3 mt-5">{title}</h2>
               <p className="mt-2 text-[15px] text-muted-foreground">{desc}</p>
             </Reveal>
           ))}

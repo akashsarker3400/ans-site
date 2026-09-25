@@ -11,12 +11,12 @@ export function Footer({ locale }: { locale: Locale }) {
     <footer className="mt-auto border-t border-line">
       <div className="container-x grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={140} height={40} className="mb-5 h-6 w-auto object-contain" />
+          <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={192} height={100} className="mb-5 h-8 w-auto object-contain" />
           <p className="max-w-xs text-[15px] text-muted-foreground">{t.footer.desc}</p>
           <p className="mt-3 max-w-xs text-[13px] text-faint">{t.footer.brandNote}</p>
         </div>
         <div className="lg:col-span-3">
-          <h4 className="label mb-4">{t.footer.services}</h4>
+          <p className="label mb-4">{t.footer.services}</p>
           <ul className="space-y-2.5 text-[15px] text-muted-foreground">
             {SERVICES.map((s) => (
               <li key={s.slug}>
@@ -28,7 +28,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </ul>
         </div>
         <div className="lg:col-span-2">
-          <h4 className="label mb-4">{t.footer.company}</h4>
+          <p className="label mb-4">{t.footer.company}</p>
           <ul className="space-y-2.5 text-[15px] text-muted-foreground">
             {NAV[locale].map((item) => (
               <li key={item.href}>
@@ -40,7 +40,7 @@ export function Footer({ locale }: { locale: Locale }) {
           </ul>
         </div>
         <div className="lg:col-span-3">
-          <h4 className="label mb-4">{t.footer.contact}</h4>
+          <p className="label mb-4">{t.footer.contact}</p>
           <ul className="space-y-2.5 text-[15px] text-muted-foreground">
             <li>
               <a href={`mailto:${CONTACT.email}`} className="text-foreground transition-colors hover:text-signal">

@@ -1,9 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useRef, useSyncExternalStore, type ReactNode } from "react";
-import { motion, useInView, useReducedMotion } from "motion/react";
-import { MeshGradient } from "@paper-design/shaders-react";
+import type { ReactNode } from "react";
+import { motion } from "motion/react";
 import {
   ArrowRight,
   ArrowUpRight,
@@ -38,14 +37,13 @@ export { ArrowRight, ArrowUpRight };
 /* ---------- Reveal: opacity + 16px rise, once ---------- */
 
 export function Reveal({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
-  const reduce = useReducedMotion();
   return (
     <motion.div
       className={className}
-      initial={reduce ? { opacity: 0 } : { opacity: 0, y: 16 }}
+      initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-      transition={{ duration: reduce ? 0.2 : 0.48, ease: EASE, delay }}
+      transition={{ duration: 0.48, ease: EASE, delay }}
     >
       {children}
     </motion.div>
@@ -56,7 +54,7 @@ export function Reveal({ children, delay = 0, className }: { children: ReactNode
 
 export function Section({ id, index, label, title, sub, action, children, className }: { id?: string; index?: string; label: string; title?: ReactNode; sub?: string; action?: ReactNode; children?: ReactNode; className?: string }) {
   return (
-    <section id={id} className={cn("py-16 md:py-24", className)}>
+    <section id={id} className={cn("py-14 md:py-20", className)}>
       <div className="container-x">
         <Reveal>
           <div className="rail">
@@ -97,24 +95,6 @@ export function PageHead({ label, title, sub }: { label: string; title: string; 
         </Reveal>
       </div>
     </section>
-  );
-}
-
-/* ---------- Signal panel: orange→graphite mesh gradient, clipped and quiet ---------- */
-
-const noop = () => () => {};
-
-export function SignalPanel({ className, opacity = 0.35, speed = 0.15 }: { className?: string; opacity?: number; speed?: number }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const visible = useInView(ref, { margin: "100px" });
-  const reduce = useReducedMotion();
-  const mounted = useSyncExternalStore(noop, () => true, () => false);
-  return (
-    <div ref={ref} aria-hidden className={cn("pointer-events-none overflow-hidden bg-surface-2", className)} style={{ opacity }}>
-      {mounted && !reduce && (
-        <MeshGradient style={{ width: "100%", height: "100%" }} colors={["#ff6a00", "#7a3300", "#1c1f26", "#0b0c0f", "#ff9a4d"]} distortion={0.6} swirl={0.2} speed={visible ? speed : 0} />
-      )}
-    </div>
   );
 }
 
