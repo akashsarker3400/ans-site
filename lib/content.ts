@@ -279,6 +279,49 @@ export const SERVICES: Service[] = [
   },
 ];
 
+// Bengali versions of the service detail content (features, ideal-for) and pricing.
+export const SERVICE_BN: Record<string, { features: string[]; idealFor: string }> = {
+  "white-label-saas": {
+    features: [
+      "কাস্টম ডোমেইন, লোগো ও সম্পূর্ণ হোয়াইট-লেবেল ব্র্যান্ডিং",
+      "বিশ্বব্যাপী ১৫০+ স্ট্রিমিং প্ল্যাটফর্ম ও স্টোর",
+      "গড়ে ২৪–৪৮ ঘণ্টায় ডেলিভারি",
+      "সব প্ল্যানে অফিসিয়াল VEVO ভিডিও ডেলিভারি",
+      "রিয়েল-টাইম রয়্যালটি রিপোর্ট ও রেভিনিউ স্প্লিট",
+      "ISRC ও UPC কোড অন্তর্ভুক্ত",
+      "REST API অ্যাক্সেস (Label ও Enterprise প্ল্যান)",
+      "প্রতিটি টিয়ারে আনলিমিটেড আর্টিস্ট",
+    ],
+    idealFor: "যেসব লেবেল ও ডিস্ট্রিবিউটর অন্যের প্ল্যাটফর্ম resell না করে নিজের ব্র্যান্ডে প্ল্যাটফর্ম চালাতে চান।",
+  },
+  "vevo-channel": {
+    features: ["শুরু থেকে শেষ পর্যন্ত আবেদন প্রক্রিয়া পরিচালনা", "আন্তর্জাতিক কমপ্লায়েন্স মান", "দ্রুত টার্নঅ্যারাউন্ড", "সাশ্রয়ী মূল্য", "অনুমোদনের পরেও সাপোর্ট"],
+    idealFor: "যেসব লেবেল ও শিল্পী একা আবেদন প্রক্রিয়ায় না গিয়ে অফিসিয়াল VEVO উপস্থিতি চান।",
+  },
+  "distribution-support": {
+    features: ["DSP কমপ্লায়েন্স রিভিউ", "কন্টেন্ট প্রিপারেশন ও QC", "ডেলিভারি অটোমেশন", "মেটাডেটা অপটিমাইজেশন", "রিলিজ শিডিউলিং সাপোর্ট"],
+    idealFor: "যেসব টিম নিয়মিত রিলিজ করে এবং ম্যানুয়াল ঝামেলা ছাড়া পরিষ্কার, সময়মতো ডেলিভারি চায়।",
+  },
+  "copyright-management": {
+    features: ["অননুমোদিত ব্যবহার শনাক্তকরণ", "ক্লেইম সাবমিশন ও ম্যানেজমেন্ট", "পডকাস্ট প্রোটেকশন", "টেকডাউন রিকোয়েস্ট হ্যান্ডলিং", "প্ল্যাটফর্ম কমপ্লায়েন্স মনিটরিং"],
+    idealFor: "যেসব ক্যাটালগ মালিক এককালীন আপলোডের পরেও চলমান সুরক্ষা চান।",
+  },
+  "youtube-content-id": {
+    features: ["Content ID সেটআপ ও ক্লেইম ম্যানেজমেন্ট", "ফেক চ্যানেল রিমুভাল", "কপিরাইট স্ট্রাইক সমাধান", "মনিটাইজেশন সমস্যার সমাধান", "পলিসি কমপ্লায়েন্স রিভিউ"],
+    idealFor: "যেসব চ্যানেল মালিক ইমপারসোনেটর, ভুল স্ট্রাইক বা আনক্লেইমড মনিটাইজেশন নিয়ে ভুগছেন।",
+  },
+  "meta-rights-manager": {
+    features: ["Rights Manager সেটআপ", "রি-আপলোড শনাক্তকরণ ও সুরক্ষা", "বাল্ক টেকডাউন রিকোয়েস্ট", "ক্রস-প্ল্যাটফর্ম মনিটরিং"],
+    idealFor: "যেসব ভিডিও নির্মাতা ও লেবেলের কন্টেন্ট Facebook ও Instagram-এ অনুমতি ছাড়া রি-আপলোড হয়।",
+  },
+};
+
+export const PRICING_BN: Record<string, { price: string; audioCut: string; videoCut: string; features: string[] }> = {
+  Starter: { price: "ফ্রি", audioCut: "৭০% আপনার", videoCut: "৭০% আপনার", features: ["বেসিক ড্যাশবোর্ড", "আনলিমিটেড আর্টিস্ট"] },
+  Label: { price: "$৪৯/মাস", audioCut: "৯৫% আপনার", videoCut: "৮৫% আপনার", features: ["অ্যাডভান্সড ড্যাশবোর্ড", "API অ্যাক্সেস", "কন্ট্র্যাক্ট ম্যানেজমেন্ট"] },
+  Enterprise: { price: "কাস্টম", audioCut: "৯০–৯৫% আপনার", videoCut: "৯০–৯৫% আপনার", features: ["সম্পূর্ণ অ্যানালিটিক্স স্যুট", "ডেডিকেটেড ম্যানেজার", "কাস্টম ইন্টিগ্রেশন"] },
+};
+
 export const FAQ_EN = [
   {
     q: "What is white-label music distribution?",
@@ -289,8 +332,8 @@ export const FAQ_EN = [
     a: "Timelines depend on VEVO's review process, but we handle the full application end-to-end and keep you updated at every stage so there are no surprises.",
   },
   {
-    q: "Do you only work with Bangladeshi labels, or international clients too?",
-    a: "We're based in Bangladesh and proud of it, but our services are built to international standards and we work with labels and artists globally.",
+    q: "Do you work with international labels and artists?",
+    a: "We work with labels, distributors and artists globally. Our services are built to international standards and every platform we deliver to is worldwide.",
   },
   {
     q: "Which DSPs (streaming platforms) do you support?",
@@ -328,8 +371,8 @@ export const FAQ_BN = [
     a: "সময়সীমা নির্ভর করে VEVO-এর রিভিউ প্রক্রিয়ার উপর, তবে আমরা পুরো আবেদন প্রক্রিয়াটি শুরু থেকে শেষ পর্যন্ত পরিচালনা করি এবং প্রতিটি ধাপে আপনাকে আপডেট রাখি।",
   },
   {
-    q: "আপনারা কি শুধু বাংলাদেশি লেবেলদের সাথে কাজ করেন, নাকি আন্তর্জাতিক ক্লায়েন্টদের সাথেও?",
-    a: "আমরা বাংলাদেশ ভিত্তিক এবং এতে গর্বিত, তবে আমাদের সেবাগুলো আন্তর্জাতিক মান অনুযায়ী তৈরি এবং আমরা বিশ্বব্যাপী লেবেল ও শিল্পীদের সাথে কাজ করি।",
+    q: "আপনারা কি আন্তর্জাতিক লেবেল ও শিল্পীদের সাথে কাজ করেন?",
+    a: "আমরা বিশ্বব্যাপী লেবেল, ডিস্ট্রিবিউটর ও শিল্পীদের সাথে কাজ করি। আমাদের সেবাগুলো আন্তর্জাতিক মান অনুযায়ী তৈরি।",
   },
   {
     q: "আপনারা কোন কোন DSP (স্ট্রিমিং প্ল্যাটফর্ম) সাপোর্ট করেন?",
@@ -357,6 +400,7 @@ export const NAV = {
   bn: [
     { href: "/", label: "হোম" },
     { href: "/services", label: "সেবাসমূহ" },
+    { href: "/pricing", label: "প্রাইসিং" },
     { href: "/tools", label: "টুলস" },
     { href: "/about", label: "আমাদের সম্পর্কে" },
     { href: "/faq", label: "প্রশ্নোত্তর" },
@@ -386,7 +430,7 @@ export const TOOLS: Tool[] = [
   {
     slug: "url-shortener",
     icon: "Link2",
-    href: "/short",
+    href: "https://ans.bd/short",
     external: true,
     status: "live",
     bn: {

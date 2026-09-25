@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored third-party components (Unlumen UI, shadcn)
+    "components/unlumen-ui/**",
+    "components/ui/**",
   ]),
 ]);
 
