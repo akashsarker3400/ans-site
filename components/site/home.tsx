@@ -280,7 +280,7 @@ export function Featured({ locale }: { locale: Locale }) {
                 </li>
               ))}
             </ul>
-            <Link href={locale === "bn" ? `${b}/pricing` : `${b}/services/white-label-saas`} className="btn-primary mt-8">
+            <Link href={`${b}/services/white-label-saas`} className="btn-primary mt-8">
               {t.featured.cta}
               <ArrowRight className="size-4" />
             </Link>
@@ -293,6 +293,34 @@ export function Featured({ locale }: { locale: Locale }) {
               </Reveal>
             ))}
           </div>
+        </div>
+      </Reveal>
+    </section>
+  );
+}
+
+/* ---------------- Artist pricing pointer (bn only: BDT page exists) ---------------- */
+
+export function ArtistPricingCta({ locale }: { locale: Locale }) {
+  if (locale !== "bn") return null;
+  const t = COPY[locale].featured.artistCta;
+  const b = base(locale);
+  return (
+    <section className="container-x pt-4 pb-4 md:pt-6">
+      <Reveal>
+        <div className="card flex flex-col gap-6 p-7 md:flex-row md:items-center md:justify-between md:p-9">
+          <div className="max-w-[56ch]">
+            <span className="label inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5">
+              <span className="size-1.5 rounded-full bg-signal" />
+              {t.kicker}
+            </span>
+            <h2 className="text-h3 mt-5">{t.title}</h2>
+            <p className="mt-2 text-[15px] text-muted-foreground">{t.body}</p>
+          </div>
+          <Link href={`${b}/pricing`} className="btn-ghost shrink-0">
+            {t.cta}
+            <ArrowRight className="size-4" />
+          </Link>
         </div>
       </Reveal>
     </section>

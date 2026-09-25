@@ -54,18 +54,24 @@ const en = {
   },
   why: { kicker: "Why ANS Digital", title: "Built in-house, end to end" },
   featured: {
-    kicker: "Featured platform",
+    kicker: "For labels & distributors",
     title: "ANS Music — white-label distribution, built by us",
     body:
       "ANS Music is our flagship distribution platform: a fully white-label product that lets labels launch their own branded distribution business — custom domain, artist portal, and delivery to 150+ platforms — without building any of the underlying infrastructure themselves.",
-    points: ["150+ streaming platforms, 24–48hr delivery", "Official VEVO video delivery on video plans", "Real-time royalty reporting and revenue splits"],
+    points: ["150+ streaming platforms, 24–48hr delivery", "Official VEVO video delivery on every label tier", "Real-time royalty reporting and revenue splits"],
     cta: "See plans & pricing",
     tiles: [
-      ["Unlimited releases", "on every plan"],
-      ["Up to 90%", "royalties to you"],
+      ["Unlimited artists", "on every label tier"],
+      ["Your brand", "custom domain & logo"],
       ["150+ platforms", "worldwide reach"],
       ["24–48hr", "average delivery"],
     ],
+    artistCta: {
+      kicker: "For artists",
+      title: "Releasing your own music?",
+      body: "Artist and label plans on ANS Music start from ৳125 a month, billed yearly in BDT.",
+      cta: "See artist pricing (BDT)",
+    },
   },
   portfolio: {
     kicker: "Corporate structure",
@@ -182,17 +188,23 @@ const bn: typeof en = {
   },
   why: { kicker: "কেন এএনএস ডিজিটাল", title: "নিজেদের তৈরি প্রযুক্তি, শুরু থেকে শেষ" },
   featured: {
-    kicker: "ফিচার্ড প্ল্যাটফর্ম",
+    kicker: "লেবেল ও ডিস্ট্রিবিউটরদের জন্য",
     title: "ANS Music — আমাদের তৈরি হোয়াইট-লেবেল ডিস্ট্রিবিউশন",
     body: "ANS Music আমাদের প্রধান ডিস্ট্রিবিউশন প্ল্যাটফর্ম: একটি সম্পূর্ণ হোয়াইট-লেবেল প্রোডাক্ট, যা দিয়ে লেবেলরা নিজস্ব ব্র্যান্ডে ডিস্ট্রিবিউশন ব্যবসা চালু করতে পারে — কাস্টম ডোমেইন, আর্টিস্ট পোর্টাল, আর ১৫০+ প্ল্যাটফর্মে ডেলিভারি — কোনো ইনফ্রাস্ট্রাকচার নিজেদের বানাতে না হয়ে।",
-    points: ["১৫০+ স্ট্রিমিং প্ল্যাটফর্ম, ২৪–৪৮ ঘণ্টায় ডেলিভারি", "ভিডিও প্ল্যানে অফিসিয়াল VEVO ভিডিও ডেলিভারি", "রিয়েল-টাইম রয়্যালটি রিপোর্ট ও রেভিনিউ স্প্লিট"],
+    points: ["১৫০+ স্ট্রিমিং প্ল্যাটফর্ম, ২৪–৪৮ ঘণ্টায় ডেলিভারি", "প্রতিটি লেবেল টিয়ারে অফিসিয়াল VEVO ভিডিও ডেলিভারি", "রিয়েল-টাইম রয়্যালটি রিপোর্ট ও রেভিনিউ স্প্লিট"],
     cta: "প্ল্যান ও প্রাইসিং দেখুন",
     tiles: [
-      ["আনলিমিটেড রিলিজ", "প্রতিটি প্ল্যানে"],
-      ["৯০% পর্যন্ত", "রয়্যালটি আপনার"],
+      ["আনলিমিটেড আর্টিস্ট", "প্রতিটি লেবেল টিয়ারে"],
+      ["আপনার ব্র্যান্ড", "কাস্টম ডোমেইন ও লোগো"],
       ["১৫০+ প্ল্যাটফর্ম", "বিশ্বব্যাপী"],
       ["২৪–৪৮ ঘণ্টা", "গড় ডেলিভারি"],
     ],
+    artistCta: {
+      kicker: "আর্টিস্টদের জন্য",
+      title: "নিজের মিউজিক রিলিজ করতে চান?",
+      body: "ANS Music-এ আর্টিস্ট ও লেবেল প্ল্যান শুরু মাসে মাত্র ৳১২৫ থেকে, বার্ষিক বিল BDT-তে।",
+      cta: "আর্টিস্ট প্রাইসিং দেখুন (BDT)",
+    },
   },
   portfolio: {
     kicker: "কর্পোরেট স্ট্রাকচার",
