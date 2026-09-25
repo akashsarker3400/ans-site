@@ -90,7 +90,7 @@ const en = {
     kicker: "About us",
     title: "Media technology, built in-house",
     lead1: "ANS Digital is a technology company specializing in B2B/B2C music, media, and SaaS technology. We build and operate the products under our portfolio — including ",
-    lead2: " — with our own engineering team, integrating with established industry infrastructure where it makes sense. We believe technology is not merely a service, it's a long-term business partnership.",
+    lead2: ". We believe technology is not merely a service, it's a long-term business partnership.",
     vision: "Our vision",
     visionBody:
       "To shape the digital future of music and media, and establish ANS Digital as a reliable B2B technology partner offering services built to international standards.",
@@ -223,7 +223,7 @@ const bn: typeof en = {
     kicker: "আমাদের সম্পর্কে",
     title: "এএনএস ডিজিটাল",
     lead1: "এএনএস ডিজিটাল একটি প্রযুক্তি প্রতিষ্ঠান, যারা B2B/B2C মিউজিক, মিডিয়া ও SaaS টেকনোলজিতে বিশেষজ্ঞ। আমরা আমাদের পোর্টফোলিও-এর প্রোডাক্টগুলো — যেমন ",
-    lead2: " — নিজেদের ইঞ্জিনিয়ারিং টিম দিয়ে তৈরি ও পরিচালনা করি, যেখানে দরকার প্রতিষ্ঠিত ইন্ডাস্ট্রি ইনফ্রাস্ট্রাকচারের সাথে যুক্ত করে।",
+    lead2: " — নিজেরাই তৈরি ও পরিচালনা করি।",
     vision: "ভিশন",
     visionBody: "মিউজিক ও মিডিয়ার ডিজিটাল ভবিষ্যৎ গঠনে সক্রিয় ভূমিকা রাখা এবং আন্তর্জাতিক মানের সেবা প্রদানকারী একটি নির্ভরযোগ্য B2B প্রযুক্তি অংশীদার হিসেবে প্রতিষ্ঠিত হওয়া।",
     mission: "মিশন",

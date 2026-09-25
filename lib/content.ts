@@ -79,12 +79,12 @@ export const WHY_US = [
   {
     icon: "Layers",
     bn: {
-      title: "নিজেদের ইঞ্জিনিয়ারিং টিম",
-      body: "ANS Music-সহ আমাদের প্রোডাক্টগুলো আমাদের নিজস্ব টিম তৈরি ও পরিচালনা করে।",
+      title: "নিজেদের প্রোডাক্ট",
+      body: "ANS Music-সহ আমাদের প্রোডাক্টগুলো আমরাই তৈরি করেছি এবং আমরাই পরিচালনা করি।",
     },
     en: {
-      title: "Our own engineering team",
-      body: "Our products — including ANS Music — are built and run by our own in-house team.",
+      title: "Our own products",
+      body: "Our products — including ANS Music — are built and operated by us.",
     },
   },
   {
