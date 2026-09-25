@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const origin = en ? "https://ans.digital" : "https://ans.bd";
   const b = en ? "/en" : "/bn";
   const now = new Date();
-  const pages = ["", "/services", "/tools", "/about", "/faq", "/contact", ...SERVICES.map((s) => `/services/${s.slug}`)];
+  const pages = ["", "/services", "/tools", "/about", "/faq", "/contact", ...(en ? [] : ["/pricing"]), ...SERVICES.map((s) => `/services/${s.slug}`)];
   return pages.map((p) => ({
     url: `${origin}${b}${p}`,
     lastModified: now,

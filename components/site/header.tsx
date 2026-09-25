@@ -15,6 +15,7 @@ const SHARED = new Set(["", "/services", "/tools", "/about", "/faq", "/contact"]
 
 function otherLanguageHref(locale: Locale, pathname: string) {
   const path = pathname.replace(/^\/(bn|en)/, "");
+  if (path === "/pricing") return "https://ansmusic.io/pricing/";
   const target = locale === "bn" ? "https://ans.digital" : "https://ans.bd";
   const keep = SHARED.has(path) || path.startsWith("/services/");
   return `${target}${keep ? path : ""}`;

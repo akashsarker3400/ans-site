@@ -400,6 +400,7 @@ export const NAV = {
   bn: [
     { href: "/", label: "হোম" },
     { href: "/services", label: "সেবাসমূহ" },
+    { href: "/pricing", label: "প্রাইসিং" },
     { href: "/tools", label: "টুলস" },
     { href: "/about", label: "আমাদের সম্পর্কে" },
     { href: "/faq", label: "প্রশ্নোত্তর" },

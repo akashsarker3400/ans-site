@@ -55,12 +55,19 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
       </div>
       <div className="border-t border-line">
+        <div className="container-x py-6">
+          <p className="label mb-3">{t.footer.payments}</p>
+          <div className="overflow-hidden rounded-2xl border border-line bg-white p-3">
+            <Image src="/images/sslcommerz.png" alt="Pay with Visa, Mastercard, bKash, Nagad and more. Verified by SSLCommerz." width={2400} height={281} className="h-auto w-full" sizes="(min-width: 1280px) 1232px, 100vw" />
+          </div>
+        </div>
+      </div>
+      <div className="border-t border-line">
         <div className="container-x flex flex-col gap-4 py-6 text-[13px] text-faint sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {new Date().getFullYear()} ANS Digital. {t.footer.rights}
           </span>
           <span className="flex flex-wrap items-center gap-2">
-            <span className="mr-1">{t.footer.payments}</span>
             {CONTACT.paymentMethods.map((m) => (
               <span key={m} className="rounded-full border border-line px-2.5 py-1 text-[12px] font-medium text-muted-foreground">
                 {m}
