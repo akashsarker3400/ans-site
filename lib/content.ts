@@ -79,12 +79,12 @@ export const WHY_US = [
   {
     icon: "Layers",
     bn: {
-      title: "আমরা তৈরি করি, resell করি না",
-      body: "ANS Music-সহ আমাদের পোর্টফোলিও-এর প্রতিটি প্রোডাক্ট আমরা নিজেরাই ডিজাইন, ডেভেলপ ও পরিচালনা করি — কোনো তৃতীয় পক্ষের প্ল্যাটফর্মের উপর নির্ভরশীল নই।",
+      title: "নিজেদের ইঞ্জিনিয়ারিং টিম",
+      body: "ANS Music-সহ আমাদের প্রোডাক্টগুলোর ডিজাইন, ডেভেলপমেন্ট ও পরিচালনা আমাদের নিজস্ব টিমের হাতে। যেখানে দরকার, প্রতিষ্ঠিত ইন্ডাস্ট্রি ইনফ্রাস্ট্রাকচারের সাথে যুক্ত করি — কিন্তু প্রোডাক্ট, ডেটা ও সাপোর্ট আমাদের নিয়ন্ত্রণে থাকে।",
     },
     en: {
-      title: "We build, not resell",
-      body: "Every product in our portfolio — including ANS Music — is designed, developed, and operated in-house, not resold from someone else's white-label platform.",
+      title: "Our own engineering team",
+      body: "Our products — including ANS Music — are designed, developed and operated by our in-house team. Where it makes sense we integrate with established industry infrastructure, but the product, the data and the support stay under our control.",
     },
   },
   {
