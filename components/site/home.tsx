@@ -139,7 +139,7 @@ export function ServicesGrid({ locale, large = false }: { locale: Locale; large?
               </span>
               <span className="text-[12px] font-semibold text-faint tabular-nums">{String(i + 1).padStart(2, "0")}</span>
             </div>
-            <h3 className="text-h3 mt-7">{s[locale].title}</h3>
+            {large ? <h2 className="text-h3 mt-7">{s[locale].title}</h2> : <h3 className="text-h3 mt-7">{s[locale].title}</h3>}
             <p className="mt-2 flex-1 text-[15px] text-muted-foreground">{s[locale].short}</p>
             {large && locale === "en" && (
               <ul className="mt-5 space-y-1.5 border-t border-line pt-4 text-[14px] text-muted-foreground">
@@ -280,7 +280,7 @@ export function Featured({ locale }: { locale: Locale }) {
                 </li>
               ))}
             </ul>
-            <Link href={`${b}/services/white-label-saas`} className="btn-primary mt-8">
+            <Link href={locale === "bn" ? `${b}/pricing` : `${b}/services/white-label-saas`} className="btn-primary mt-8">
               {t.featured.cta}
               <ArrowRight className="size-4" />
             </Link>

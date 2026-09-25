@@ -46,7 +46,7 @@ export default async function Pricing({ params }: { params: Promise<{ locale: st
                   <span className="label">{p.kind}</span>
                   {p.badge && <span className="label text-signal">{p.badge}</span>}
                 </div>
-                <p className="mt-1 text-[13px] text-faint">যাদের জন্য: {p.audience}</p>
+                <p className="mt-1 min-h-[2.6em] text-[13px] leading-snug text-faint">যাদের জন্য: {p.audience}</p>
                 <h2 className="text-h3 mt-5">{p.name}</h2>
                 <p className="mt-2 text-[14px] text-muted-foreground">{p.tagline}</p>
                 <p className="mt-6 font-heading text-[40px] leading-none font-extrabold tracking-[-0.02em] tabular-nums">
@@ -55,7 +55,7 @@ export default async function Pricing({ params }: { params: Promise<{ locale: st
                 </p>
                 {p.billing && <p className="mt-2 text-[13px] font-medium text-signal">✦ {p.billing}</p>}
                 {p.regular && <p className="mt-1 text-[12px] text-faint">{p.regular}</p>}
-                <ul className="mt-6 space-y-2 border-t border-line pt-5 text-[14px]">
+                <ul className="mt-6 flex-1 space-y-2 border-t border-line pt-5 text-[14px]">
                   {p.features.map((f) => (
                     <li key={f} className="flex gap-2.5">
                       <Check className="mt-1 size-3.5 shrink-0 text-signal" />
@@ -120,11 +120,19 @@ export default async function Pricing({ params }: { params: Promise<{ locale: st
 
       {/* Compare */}
       <Section label="তুলনা" title="কোন প্ল্যান আপনার জন্য?">
-        <Reveal className="mt-10 overflow-x-auto rounded-[24px] border border-line">
-          <table className="w-full min-w-[820px] text-left text-[14px]">
+        <p className="mt-8 text-[13px] text-faint md:hidden">← → পাশে স্ক্রল করে সব প্ল্যান দেখুন</p>
+        <Reveal className="mt-3 overflow-x-auto rounded-[24px] border border-line md:mt-10">
+          <table className="w-full min-w-[720px] table-fixed text-left text-[14px]">
+            <colgroup>
+              <col className="w-[28%]" />
+              <col className="w-[18%]" />
+              <col className="w-[18%]" />
+              <col className="w-[18%]" />
+              <col className="w-[18%]" />
+            </colgroup>
             <thead className="bg-surface-2 text-[13px]">
               <tr>
-                <th className="px-5 py-4 font-semibold">ফিচার</th>
+                <th className="sticky left-0 z-10 bg-surface-2 px-5 py-4 font-semibold">ফিচার</th>
                 {["Starter", "Video", "Starter + Video", "Partner"].map((h) => (
                   <th key={h} className={cn("px-5 py-4 font-semibold", h === "Starter + Video" && "text-signal")}>
                     {h}
@@ -135,7 +143,7 @@ export default async function Pricing({ params }: { params: Promise<{ locale: st
             <tbody className="divide-y divide-line">
               {COMPARE.map((row) => (
                 <tr key={row[0]} className="bg-surface">
-                  <th scope="row" className="px-5 py-3.5 font-medium">
+                  <th scope="row" className="sticky left-0 z-10 bg-surface px-5 py-3.5 font-medium">
                     {row[0]}
                   </th>
                   {row.slice(1).map((cell, j) => (

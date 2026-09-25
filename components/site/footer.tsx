@@ -9,15 +9,15 @@ export function Footer({ locale }: { locale: Locale }) {
   const b = base(locale);
   return (
     <footer className="mt-auto border-t border-line">
-      <div className="container-x grid gap-10 py-16 sm:grid-cols-2 lg:grid-cols-12">
-        <div className="lg:col-span-4">
+      <div className="container-x grid grid-cols-2 gap-x-6 gap-y-10 py-14 lg:grid-cols-12 lg:py-16">
+        <div className="col-span-2 lg:col-span-4">
           <Image src="/images/ans_digital_logo_white.png" alt="ANS Digital" width={192} height={100} className="mb-5 h-8 w-auto object-contain" />
           <p className="max-w-xs text-[15px] text-muted-foreground">{t.footer.desc}</p>
           <p className="mt-3 max-w-xs text-[13px] text-faint">{t.footer.brandNote}</p>
         </div>
         <div className="lg:col-span-3">
           <p className="label mb-4">{t.footer.services}</p>
-          <ul className="space-y-2.5 text-[15px] text-muted-foreground">
+          <ul className="space-y-2.5 text-[14px] text-muted-foreground sm:text-[15px]">
             {SERVICES.map((s) => (
               <li key={s.slug}>
                 <Link href={`${b}/services/${s.slug}`} className="transition-colors hover:text-foreground">
@@ -39,7 +39,7 @@ export function Footer({ locale }: { locale: Locale }) {
             ))}
           </ul>
         </div>
-        <div className="lg:col-span-3">
+        <div className="col-span-2 sm:col-span-1 lg:col-span-3">
           <p className="label mb-4">{t.footer.contact}</p>
           <ul className="space-y-2.5 text-[15px] text-muted-foreground">
             <li>
@@ -55,24 +55,15 @@ export function Footer({ locale }: { locale: Locale }) {
         </div>
       </div>
       <div className="border-t border-line">
-        <div className="container-x py-6">
-          <p className="label mb-3">{t.footer.payments}</p>
-          <div className="overflow-hidden rounded-2xl border border-line bg-white p-3">
-            <Image src="/images/sslcommerz.png" alt="Pay with Visa, Mastercard, bKash, Nagad and more. Verified by SSLCommerz." width={2400} height={281} className="h-auto w-full" sizes="(min-width: 1280px) 1232px, 100vw" />
+        <div className="container-x flex flex-col gap-5 py-6 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col gap-2">
+            <span className="label">{t.footer.payments}</span>
+            <a href="https://sslcommerz.com" target="_blank" rel="noopener noreferrer" className="inline-flex w-fit rounded-xl bg-white px-3 py-2 transition-opacity hover:opacity-90">
+              <Image src="/images/sslcommerz.png" alt="Pay with Visa, Mastercard, bKash, Nagad and more. Verified by SSLCommerz." width={2400} height={281} className="h-auto w-full max-w-[520px] sm:h-12 sm:w-auto" sizes="560px" />
+            </a>
           </div>
-        </div>
-      </div>
-      <div className="border-t border-line">
-        <div className="container-x flex flex-col gap-4 py-6 text-[13px] text-faint sm:flex-row sm:items-center sm:justify-between">
-          <span>
+          <span className="text-[13px] text-faint">
             © {new Date().getFullYear()} ANS Digital. {t.footer.rights}
-          </span>
-          <span className="flex flex-wrap items-center gap-2">
-            {CONTACT.paymentMethods.map((m) => (
-              <span key={m} className="rounded-full border border-line px-2.5 py-1 text-[12px] font-medium text-muted-foreground">
-                {m}
-              </span>
-            ))}
           </span>
         </div>
       </div>

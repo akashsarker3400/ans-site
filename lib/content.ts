@@ -430,7 +430,7 @@ export const TOOLS: Tool[] = [
   {
     slug: "url-shortener",
     icon: "Link2",
-    href: "/short",
+    href: "https://ans.bd/short",
     external: true,
     status: "live",
     bn: {
