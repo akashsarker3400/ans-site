@@ -52,7 +52,7 @@ const en = {
     use: "Use tool",
     useNow: "Use it now",
   },
-  why: { kicker: "Why ANS Digital", title: "We don't rent technology, we build it" },
+  why: { kicker: "Why ANS Digital", title: "Built in-house, end to end" },
   featured: {
     kicker: "Featured platform",
     title: "ANS Music — white-label distribution, built by us",
@@ -180,7 +180,7 @@ const bn: typeof en = {
     use: "ব্যবহার করুন",
     useNow: "ব্যবহার করুন",
   },
-  why: { kicker: "কেন এএনএস ডিজিটাল", title: "প্রযুক্তি ধার করি না, নিজেরাই গড়ি" },
+  why: { kicker: "কেন এএনএস ডিজিটাল", title: "নিজেদের তৈরি প্রযুক্তি, শুরু থেকে শেষ" },
   featured: {
     kicker: "ফিচার্ড প্ল্যাটফর্ম",
     title: "ANS Music — আমাদের তৈরি হোয়াইট-লেবেল ডিস্ট্রিবিউশন",
